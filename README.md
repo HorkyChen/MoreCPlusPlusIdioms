@@ -1,6 +1,7 @@
 # More C++ Idioms
 ====================
 ![cover image](https://upload.wikimedia.org/wikibooks/en/thumb/9/9c/More_CPP_Idioms.jpg/190px-More_CPP_Idioms.jpg)
+
 The world is invited to catalog reusable pieces of C++ knowledge (similar to the book on design patterns by GoF). The goal here is to first build an exhaustive catalog of modern C++ idioms and later evolve it into an idiom language, just like a pattern language. 
 
 刚刚启步，欢迎一起讨论！
@@ -18,8 +19,8 @@ npm install gitbook -g
 然后git clone下来本书，然后输出静态网页，在浏览器上查看：
 
 ```sh
-git clone git@github.com:XimingCheng/Effective-Modern-Cpp-Zh.git
-cd Effective-Modern-Cpp-Zh
+git clone git@github.com:HorkyChen/MoreCPlusPlusIdioms.git
+cd MoreCPlusPlusIdioms
 gitbook serve .
 ```
 
