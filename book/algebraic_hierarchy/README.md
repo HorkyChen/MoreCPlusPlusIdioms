@@ -1,13 +1,17 @@
-# 代数的阶层(Algebraic Hierarchy)
+# 代数层次(Algebraic Hierarchy)
 
 ##目的
 对于联系密切的代数抽象(数值)，通过抽象将它使用通用的接口隐藏起来。
+
+    译注:好奇怪的命名！其本质是指一个实现不同数值表示的案例。其中层次表示一个抽象类与多个具体类的关系。
+    即《Advanced C++ Programming Styles and Idioms》中5.5一节所讲述的内容。
+    这个惯用法最大的特点就是以组合+继承+引用计数的形式。
 
 ##别名
 状态 (GOF,设计模式)
 
 ##动机
-在纯粹的面向对象的语言中，比如Smalltalk，变量像是贴标签一样在运行时绑定到对象上。在这些语言中赋值就像是将一个对象的标签撕下来，再贴到另一个对象上。在C/C++里，变量则是等同于对象的地址和偏移量，所以赋值操作就会使用新的值重定。本惯用法使用多态代理(delegated polymorphism)来模拟绑定变量(采用弱指针)到对象，内部实现也使用了Envelope letter惯用法。
+在纯粹的面向对象的语言中，比如Smalltalk，变量可以像是贴标签一样在运行时绑定到对象上。在这些语言中赋值就像是将一个对象的标签撕下来，再贴到另一个对象上。在C/C++里，变量则是等同于对象的地址和偏移量，所以赋值操作就会使用新的值重定。本惯用法使用多态代理(delegated polymorphism)来模拟绑定变量(采用引用计数)到对象，内部实现也使用了Envelope letter惯用法。
 
 最终我们可以写出如下的代码:
 ```
@@ -30,6 +34,7 @@ class RealNumber;
 class Complex;
 class Number;
 
+// 表示数值的基类
 class Number
 {
     friend class RealNumber;
@@ -55,10 +60,11 @@ class Number
     virtual Number complexAdd (Number const &n) const;
     virtual Number realAdd (Number const &n) const;
 
-    Number *rep;
-    short referenceCount;
+    Number *rep; // 实际数据的表示者
+    short referenceCount; // 引用计数管理
 };
 
+// 以下是两个具体的数据表示类
 class Complex : public Number
 {
   friend class RealNumber;
@@ -265,6 +271,8 @@ int main (void)
   return 0;
 }
 ```
+类图:
+![envelop_letter](./envelope_letter.png)
 ##已知的应用
 
 
@@ -273,4 +281,6 @@ int main (void)
 * Envelope Letter
 
 ##参考
-Advanced C++ Programming Styles and Idioms by James Coplien, Addison Wesley, 1992.
+* Advanced C++ Programming Styles and Idioms，5.5
+* 中文版本是 《Advanced C++中文版》
+
