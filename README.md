@@ -16,7 +16,6 @@
 
 刚刚启步，欢迎一起讨论！
 
-*这次翻译的组织方式参考了[Effective Modern C++](https://github.com/Rescape/Effective-Modern-Cpp-Zh)的制作方式，在此表示感谢。
 
 ##代码使用说明
 

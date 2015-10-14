@@ -272,6 +272,7 @@ int main (void)
 }
 ```
 类图:
+
 ![envelop_letter](./envelope_letter.png)
 ##已知的应用
 
