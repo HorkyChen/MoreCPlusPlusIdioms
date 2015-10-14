@@ -3,12 +3,10 @@
 ![Cover](https://upload.wikimedia.org/wikibooks/en/thumb/9/9c/More_CPP_Idioms.jpg/190px-More_CPP_Idioms.jpg)
 
 作者: [Sumant Tambe](https://en.wikibooks.org/wiki/User:Sutambe)
-
 翻译: [Horky](http://blog.csdn.net/horkychen)
 
     赞誉
     “Great and valuable work!” -- Bjarne Stroustrup (February, 2009)
-    The world is invited to catalog reusable pieces of C++ knowledge (similar to the book on design patterns by GoF). The goal here is to first build an exhaustive catalog of modern C++ idioms and later evolve it into an idiom language, just like a pattern language.
 
 
 
