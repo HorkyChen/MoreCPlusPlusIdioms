@@ -51,6 +51,9 @@ class Bar {
 // 现在Bar通过Attorney类就只能使用Client::A和Client::B了。
 };
 ```
+类图如下:
+
+ ![general](./general.png)
 
 Attorney类只有私有的inline static函数，每个都持有一个Client实例的引用，再转而调用合适的方法。仅保持私有实现，可以避免被其它类使用。所有需要使用Client都要在Attorney中声明为友元类。如果没有Attorney类，就需要直接修改Client类。
 
@@ -91,6 +94,9 @@ int main(void) {
   Attorney::callFunc(d, 10);
 }
 ```
+类图如下:
+
+ ![special_case](./special_case.png)
 
 ##已知的应用
 * [Boost.Iterators库](http://www.boost.org/doc/libs/1_50_0/libs/iterator/doc/iterator_facade.html#iterator-core-access)
