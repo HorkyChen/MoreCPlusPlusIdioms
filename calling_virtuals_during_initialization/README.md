@@ -13,15 +13,15 @@
  public:
    Base();
    ...
-   virtual void foo(int n) const; // often pure virtual
-   virtual double bar() const;    // often pure virtual
+   virtual void foo(int n) const; // 通常为纯虚
+   virtual double bar() const;    // 通常为纯虚
  };
 
  Base::Base()
  {
    ... foo(42) ... bar() ...
-   // these will not use dynamic binding
-   // goal: simulate dynamic binding in those calls
+   // 这里无法使用动态绑定。
+   // 目标: 在这些调用中使用虚函数。
  }
 
  class Derived : public Base {
@@ -39,16 +39,16 @@
 ```
 class Base {
  public:
-   void init();  // may or may not be virtual
+   void init();  // 是否为虚函数都可以
    ...
-   virtual void foo(int n) const; // often pure virtual
-   virtual double bar() const;    // often pure virtual
+   virtual void foo(int n) const; // 通常是纯虚
+   virtual double bar() const;    // 通常是纯虚
  };
 
  void Base::init()
  {
    ... foo(42) ... bar() ...
-   // most of this is copied from the original Base::Base()
+   // 大部分是从Base::Base()拷出来的
  }
 
  class Derived : public Base {

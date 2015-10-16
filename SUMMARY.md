@@ -9,5 +9,6 @@
 * [数据成员构建基类 (Base-from-Member)](base-from-member/README.md)
 * [Boost mutant (TODO)](boost_mutant_todo/README.md)
 * [初始化过程调用虚函数 (Calling Virtuals During Initialization)](calling_virtuals_during_initialization/README.md)
+* [能力查询 (Capability Query)](capability_query/README.md)
 * [内部类 (Inner Class)](inner_class/README.md)
 
