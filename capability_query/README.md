@@ -50,7 +50,7 @@ Shape *s = getSomeShape();
 if (Rollable *roller = dynamic_cast<Rollable *>(s))
   roller->roll();
 ```
-`dynamic_cast`通常被称为***cross-cast***,因为它将尝试在一个继承结构进行转换，而不是简单的向上或向下转换。在这个例子里，通过`dynamic_cast`转换为`Rollable`时，   只有`Circle`类的对象可以成功。`Square`类因为没有实现`Rollable`，所以一定无法转换。
+`dynamic_cast`通常被称为**cross-cast**,因为它将尝试在一个继承结构进行转换，而不是简单的向上或向下转换。在这个例子里，通过`dynamic_cast`转换为`Rollable`时，   只有`Circle`类的对象可以成功。`Square`类因为没有实现`Rollable`，所以一定无法转换。
 
 过多的使用这种方式一般表示设计有问题了。
 
