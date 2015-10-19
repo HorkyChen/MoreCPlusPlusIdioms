@@ -11,6 +11,7 @@
 * [初始化过程调用虚函数 (Calling Virtuals During Initialization)](calling_virtuals_during_initialization/README.md)
 * [能力查询 (Capability Query)](capability_query/README.md)
 * [安全删除 (Checked delete)](checked_delete/README.md)
-* [清理及简化 (Clear-and-minimize)](clear-and-minimize/README.md)
+* [清理 (Clear-and-minimize)](clear-and-minimize/README.md)
+* [Coercion by Member Template](coercion_by_member_template/README.md)
 * [内部类 (Inner Class)](inner_class/README.md)
 
