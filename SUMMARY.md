@@ -12,6 +12,7 @@
 * [能力查询 (Capability Query)](capability_query/README.md)
 * [安全删除 (Checked delete)](checked_delete/README.md)
 * [清理 (Clear-and-minimize)](clear-and-minimize/README.md)
-* [Coercion by Member Template](coercion_by_member_template/README.md)
+* [通过成员模板支持隐式转换 (Coercion by Member Template)](coercion_by_member_template/README.md)
+* [计算式建构 (Computational Constructor)](computational_constructor/README.md)
 * [内部类 (Inner Class)](inner_class/README.md)
 
