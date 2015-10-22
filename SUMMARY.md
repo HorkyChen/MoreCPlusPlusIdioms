@@ -15,4 +15,5 @@
 * [通过成员模板支持隐式转换 (Coercion by Member Template)](coercion_by_member_template/README.md)
 * [计算式建构 (Computational Constructor)](computational_constructor/README.md)
 * [内部类 (Inner Class)](inner_class/README.md)
+* [Concrete Data Type](concrete_data_type/README.md)
 
