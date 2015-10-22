@@ -17,31 +17,31 @@ class EventHandler
   public:
     virtual ~EventHandler () {}
 };
-class MouseEventHandler : public EventHandler // Note inheritance
+class MouseEventHandler : public EventHandler // 继承
 {
   protected:
-    ~MouseEventHandler () {} // A protected virtual destructor.
+    ~MouseEventHandler () {} // 一个保护段内的虚析构函数
   public:
-    MouseEventHandler () {} // Public Constructor.
+    MouseEventHandler () {} // 公开的建构函数
 };
 int main (void)
 {
-  MouseEventHandler m; // A scoped variable is not allowed as destructor is protected.
-  EventHandler *e = new MouseEventHandler (); // Dynamic allocation is allowed
-  delete e;  // Polymorphic delete. Does not leak memory.
+  MouseEventHandler m; // 作用域内对象不允许有一个非公开的析构函数
+  EventHandler *e = new MouseEventHandler (); // 动态分配没有问题
+  delete e;  // 支持多态的delete, 不会有内存泄露的风险
 }
 ```
 
 另一种强制使用动态分配的方式可以使用单例的设计模式，不公开建构函数，而是提供一个静态函数返回动态分配的对象。这样还有一个好处是不需要使用多态的清理(虚析构函数)方式。提供一个成员函数`destry()`就成达到清理内存的目的(可能带虚表)。
 ```
-class MouseEventHandler // Note no inheritance
+class MouseEventHandler // 没有继随
 {
   protected:
-    MouseEventHandler () {} // Protected Constructor.
-    ~MouseEventHandler () {} // A protected, non-virtual destructor.
+    MouseEventHandler () {} // 保护段内的建构函数
+    ~MouseEventHandler () {} // 保护段内非虚的板构函数
   public:
     static MouseEventHandler * instance () { return new MouseEventHandler(); }
-    void destroy () { delete this; }  // Reclaim memory.
+    void destroy () { delete this; }  // 回收内存
 };
 ```
 
@@ -50,15 +50,15 @@ class MouseEventHandler // Note no inheritance
 class ScopedLock
 {
   private:
-    static void * operator new (size_t size); // Disallow dynamic allocation
-    static void * operator new (size_t, void * mem);  // Disallow placement new as well.
+    static void * operator new (size_t size); // 不允许动态分配
+    static void * operator new (size_t, void * mem);  // 也不允许placement new
 };
 int main (void)
 {
-   ScopedLock s; // Allowed
-   ScopedLock * sl = new ScopedLock (); // Standard new and nothrow new are not allowed.
+   ScopedLock s; // OK
+   ScopedLock * sl = new ScopedLock (); // 标准的new和nothrow new都是不允许的
    void * buf = ::operator new (sizeof (ScopedLock));
-   ScopedLock * s2 = new(buf) ScopedLock;  // Placement new is also not allowed
+   ScopedLock * s2 = new(buf) ScopedLock;  // 也不允许placement new
 }
 ```
 `ScopedLock`对象无法动态分配，包括nothrew，或者placement new。
@@ -69,3 +69,6 @@ int main (void)
 
 ##参考
 * [Concrete Data Type](http://www.laputan.org/pub/sag/coplien-idioms.doc), J. Coplien
+* 关于placement new，参考Effective C++.
+*
+
