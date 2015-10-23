@@ -14,7 +14,9 @@
 * [清理 (Clear-and-minimize)](clear-and-minimize/README.md)
 * [通过成员模板支持隐式转换 (Coercion by Member Template)](coercion_by_member_template/README.md)
 * [计算式建构 (Computational Constructor)](computational_constructor/README.md)
-* [内部类 (Inner Class)](inner_class/README.md)
-* [Concrete Data Type](concrete_data_type/README.md)
+* [实体数据类型 (Concrete Data Type)](concrete_data_type/README.md)
 * [第一次使用时建构 (Construct On First Use)](construct_on_first_use/README.md)
+* [Construction Tracker](construction_tracker/README.md)
+* [复制与交换 (Copy-and-swap)](copy-and-swap/README.md)
+* [内部类 (Inner Class)](inner_class/README.md)
 
