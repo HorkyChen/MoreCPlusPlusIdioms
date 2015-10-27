@@ -26,9 +26,9 @@ class A {
    enum TrackerType { NONE, ONE, TWO };
 public:
    A( TrackerType tracker = NONE)
-   try    // A constructor try block.
-     : b_((tracker = ONE, "hello")) // Can throw std::exception
-     , c_((tracker = TWO, "world")) // Can throw std::exception
+   try    // 建构函数try代码段
+     : b_((tracker = ONE, "hello")) // 抛出std::exception
+     , c_((tracker = TWO, "world")) // 抛出std::exception
      {
         assert(tracker == TWO);
         // ... 建构体 ...
