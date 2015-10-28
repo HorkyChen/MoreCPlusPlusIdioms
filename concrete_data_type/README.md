@@ -45,7 +45,7 @@ class MouseEventHandler // 没有继随
 };
 ```
 
-相对的，如果要限制使用第一种生命周期管理方式，也被称为自动变量(automatic variable), 只需要将new操作符限定为private。
+相对的，如果要限制使用第一种生命周期管理方式，也被称为自动变量(automatic variable), 只需要将new运算符限定为private。
 ```
 class ScopedLock
 {
