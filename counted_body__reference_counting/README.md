@@ -1,4 +1,4 @@
-# 引用计数 (Counted Body / Reference Counting)
+# 侵入式引用计数 (Counted Body / Intrusive Reference Counting)
 
 ##目的
 资源或对象的逻辑共享的管理，避免代价太大的拷贝，并且对于动态分配的资源可以完整的释放。
