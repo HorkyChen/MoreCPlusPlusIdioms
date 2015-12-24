@@ -1,6 +1,6 @@
-# Curiously Recurring Template Pattern
+# 奇异递归模板 (Curiously Recurring Template Pattern)
 ##目的
-使用一个子类作为模板参数来特化一个基类。
+使用一个子类作为模板参数来特化一个基类模板。
 ##别名
 * CRTP
 * Mixin-from-above
@@ -55,9 +55,18 @@ template <class Derived>
       // static void static_implementation();
   };
 ```
+来自维基百科的说明:
+`
+基类模板利用了其成员函数体（即成员函数的实现）将不被实例化直至声明很久之后（实际上只有被调用的模板类的成员函数才会被实例化）；并利用了派生类的成员，这是通过类型转化。
+
+在上例中，Base<Derived>::interface()，虽然是在struct Derived之前就被声明了，但未被编译器实例化直至它被实际调用，这发生于Derived声明之后，此时Derived::implementation()的声明是已知的。
+
+这种技术获得了类似于虚函数的效果，并避免了动态多态的代价。也有人把CRTP称为“模拟的动态绑定”。
+`
 
 ##已知的应用
-[Barton-Nackman trick](https://en.wikibooks.org/wiki/More_C%2B%2B_Idioms/Barton-Nackman_trick)
+* [Barton-Nackman trick](https://en.wikibooks.org/wiki/More_C%2B%2B_Idioms/Barton-Nackman_trick)
+* WebKit之引用计数智能指针(RefCounted)
 
 ##相关的惯用法
 * Parameterized Base Class Idiom

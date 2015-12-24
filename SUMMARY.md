@@ -20,6 +20,6 @@
 * [复制与交换 (Copy-and-swap)](copy-and-swap/README.md)
 * [写时拷贝 (Copy on Write)](copy_on_write/README.md)
 * [侵入式引用计数 (Counted Body / Reference Counting)](counted_body__reference_counting/README.md)
-* [(Curiously Recurring Template Pattern)](curiously_recurring_template_pattern/README.md)
+* [奇异递归模板 (Curiously Recurring Template Pattern)](curiously_recurring_template_pattern/README.md)
 * [内部类 (Inner Class)](inner_class/README.md)
 
