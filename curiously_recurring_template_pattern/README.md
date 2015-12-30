@@ -1,4 +1,4 @@
-# 奇异递归模板 (Curiously Recurring Template Pattern)
+# 奇异递归模板模式 (Curiously Recurring Template Pattern)
 ##目的
 使用一个子类作为模板参数来特化一个基类模板。
 ##别名
@@ -56,8 +56,7 @@ template <class Derived>
   };
 ```
 来自维基百科的说明:
-`
-基类模板利用了其成员函数体（即成员函数的实现）将不被实例化直至声明很久之后（实际上只有被调用的模板类的成员函数才会被实例化）；并利用了派生类的成员，这是通过类型转化。
+>基类模板利用了其成员函数体（即成员函数的实现）将不被实例化直至声明很久之后（实际上只有被调用的模板类的成员函数才会被实例化）；并利用了派生类的成员，这是通过类型转化。
 
 在上例中，Base<Derived>::interface()，虽然是在struct Derived之前就被声明了，但未被编译器实例化直至它被实际调用，这发生于Derived声明之后，此时Derived::implementation()的声明是已知的。
 
@@ -73,4 +72,5 @@ template <class Derived>
 * Barton-Nackman trick
 
 ##参考
-[Curiously Recurring Template Pattern on Wikipedia](http://en.wikipedia.org/wiki/Curiously_Recurring_Template_Pattern)
+* [Curiously Recurring Template Pattern on Wikipedia](http://en.wikipedia.org/wiki/Curiously_Recurring_Template_Pattern)
+* [The Curiously Recurring Template Pattern in C++](http://eli.thegreenplace.net/2011/05/17/the-curiously-recurring-template-pattern-in-c/)
